@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e1116" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Nur Grab</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css?v=9" />
+  <script>/*__BOOT_TOKEN__*/</script>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Nur Grab</h1>
+      <p class="sub" id="badge">…</p>
+    </div>
+    <button type="button" id="btnRefresh" class="ghost sm" aria-label="Rafraîchir">↻</button>
+  </header>
+
+  <main>
+    <section class="card search-card">
+      <div class="kind-toggle" role="group" aria-label="Type">
+        <button type="button" class="kind on" data-kind="movie">Film</button>
+        <button type="button" class="kind" data-kind="tv">Série</button>
+      </div>
+      <div class="search-row">
+        <input id="query" type="search" enterkeyhint="search" placeholder="Titre…" autocomplete="off" />
+        <button id="btnSearch" class="primary" type="button">Chercher</button>
+      </div>
+      <div id="seriesModes" class="series-modes" hidden>
+        <button type="button" class="chip on" data-mode="auto">Auto ★</button>
+        <button type="button" class="chip" data-mode="integrale">Intégrale</button>
+        <button type="button" class="chip" data-mode="seasons">Par saison</button>
+        <button type="button" class="chip" data-mode="list">Liste seule</button>
+      </div>
+      <p class="hint" id="meta"></p>
+    </section>
+
+    <section class="card browse-card">
+      <h2>C411 · explorer</h2>
+      <div id="browseTabs" class="browse-tabs"></div>
+    </section>
+
+    <section id="posterCard" class="card poster-card" hidden>
+      <div class="poster-row">
+        <img id="posterImg" alt="" hidden />
+        <div class="poster-empty" id="posterEmpty">Pas d’affiche</div>
+        <div class="poster-info">
+          <div id="posterTitle" class="poster-title">—</div>
+          <div id="posterSub" class="poster-sub"></div>
+          <p id="posterOverview" class="poster-overview"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultsWrap" class="card results-card" hidden>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section id="confirmBar" class="confirm-bar" hidden>
+      <img id="confirmPoster" alt="" hidden />
+      <div id="confirmLabel" class="confirm-label"></div>
+      <button id="btnConfirm" class="primary big" type="button">Confirmer le DL</button>
+      <button id="btnConfirmReco" class="ghost big" type="button" hidden>DL toutes les recos</button>
+      <button id="btnCancel" class="ghost" type="button">Annuler</button>
+    </section>
+
+    <section class="card">
+      <h2>En cours Ultra</h2>
+      <div id="torrentList" class="list"></div>
+    </section>
+
+    <section class="card log-card">
+      <h2>Log</h2>
+      <pre id="log"></pre>
+    </section>
+  </main>
+
+  <div id="authGate" class="auth-gate" hidden style="display:none">
+    <div class="auth-box">
+      <h2>Code d’accès</h2>
+      <p>PIN à 6 chiffres (pas le mot de passe Ultra).</p>
+      <input id="tokenInput" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="384750" autocomplete="one-time-code" />
+      <p id="authError" class="auth-error" hidden></p>
+      <button id="btnSaveToken" class="primary" type="button">Ouvrir</button>
+    </div>
+  </div>
+
+  <script src="app.js?v=9"></script>
+</body>
+</html>

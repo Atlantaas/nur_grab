@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nur Grab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Nur Grab</h1>
+      <p class="sub">API C411 · reco auto 4K Light / 1080p · confirm avant DL</p>
+    </div>
+    <div class="badge" id="statusBadge">…</div>
+  </header>
+
+  <main>
+    <section class="card hero-search">
+      <h2>Chercher</h2>
+      <p class="hint">Tape un titre → la <strong>meilleure qualité pour le moins de Go</strong> est pré-cochée (RECO). Rien ne part sans confirmation.</p>
+      <div class="row hero-row">
+        <input id="query" type="text" autofocus placeholder="Ex: spiderman, Dune, Fallout…" />
+        <select id="kind">
+          <option value="movie">Film</option>
+          <option value="tv">Série</option>
+        </select>
+        <button id="btnBest" class="primary big">Chercher</button>
+      </div>
+      <div id="seriesModes" class="series-modes" hidden>
+        <button type="button" class="chip on" data-mode="auto">Auto ★</button>
+        <button type="button" class="chip" data-mode="integrale">Intégrale</button>
+        <button type="button" class="chip" data-mode="seasons">Par saison</button>
+        <button type="button" class="chip" data-mode="list">Liste seule</button>
+      </div>
+      <p class="hint" id="c411Hint">C411…</p>
+      <div id="resultsMeta" class="hint" hidden></div>
+      <div id="resultsLayout" class="results-layout" hidden>
+        <aside class="poster-panel" id="posterPanel">
+          <div class="poster-frame" id="posterFrame">
+            <img id="posterImg" alt="" hidden />
+            <div class="poster-empty" id="posterEmpty">Pas d’affiche</div>
+          </div>
+          <div class="poster-meta">
+            <div class="poster-title" id="posterTitle">—</div>
+            <div class="poster-sub" id="posterSub"></div>
+            <p class="poster-overview" id="posterOverview"></p>
+          </div>
+        </aside>
+        <div id="resultsList" class="results"></div>
+      </div>
+      <div id="confirmBar" class="confirm-bar" hidden>
+        <img id="confirmPoster" class="confirm-poster" alt="" hidden />
+        <div id="confirmLabel" class="confirm-label"></div>
+        <button id="btnConfirm" class="primary big">Confirmer le DL</button>
+        <button id="btnConfirmReco" class="ghost" hidden>DL toutes les recos</button>
+        <button id="btnCancelPick" class="ghost">Annuler</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>C411 · explorer</h2>
+      <div id="browseTabs" class="browse-tabs"></div>
+    </section>
+
+    <section class="card collapsible">
+      <h2>Magnet / .torrent (secours)</h2>
+      <textarea id="magnet" rows="2" placeholder="magnet:?xt=urn:btih:…"></textarea>
+      <div class="row">
+        <select id="magnetKind">
+          <option value="movie">Film → Transmission</option>
+          <option value="tv">Série → qBittorrent</option>
+        </select>
+        <button id="btnMagnet" class="ghost">Envoyer</button>
+        <button id="btnTorrent" class="ghost">.torrent…</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row between">
+        <h2>En cours Ultra</h2>
+        <button id="btnRefresh" class="ghost">Rafraîchir</button>
+      </div>
+      <div id="torrentList" class="list"></div>
+    </section>
+
+    <section class="card collapsible">
+      <div class="row between">
+        <h2>FileZilla (FTPS)</h2>
+        <div class="row">
+          <button id="btnFtpMovies" class="ghost">Movies</button>
+          <button id="btnFtpTv" class="ghost">TV</button>
+          <button id="btnFtpWatch" class="ghost">watch</button>
+        </div>
+      </div>
+      <p class="hint" id="ftpPath">joker.usbx.me</p>
+      <div id="ftpList" class="list"></div>
+    </section>
+
+    <section class="card log-card">
+      <h2>Log</h2>
+      <pre id="log"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

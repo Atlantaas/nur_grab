@@ -1,0 +1,19 @@
+{
+  "name": "nur-grab",
+  "version": "1.0.0",
+  "description": "Nur Grab — Films→Transmission · Séries→qBittorrent (jamais de delete)",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "mobile": "node server.js",
+    "server": "node server.js"
+  },
+  "devDependencies": {
+    "electron": "^29.4.6"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.3.1"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "qbitBase": "https://USER.usbx.me/qbittorrent",
+  "qbitUser": "USER",
+  "qbitPass": "CHANGE_ME",
+  "transmissionRpc": "https://USER.usbx.me/transmission/rpc",
+  "transmissionUser": "USER",
+  "transmissionPass": "CHANGE_ME",
+  "prowlarrBase": "https://USER.usbx.me/prowlarr",
+  "prowlarrApiKey": "CHANGE_ME",
+  "radarrBase": "https://USER.usbx.me/radarr",
+  "radarrApiKey": "CHANGE_ME",
+  "c411Base": "https://c411.org",
+  "c411ApiKey": "CHANGE_ME",
+  "jackettBase": "https://USER.usbx.me/jackett",
+  "jackettApiKey": "CHANGE_ME",
+  "frTorznab": [
+    {
+      "id": "example-ygg",
+      "name": "YGG via Jackett",
+      "base": "https://YOUR-HOST/jackett/api/v2.0/indexers/yggtorrent/results/torznab",
+      "apikey": "JACKETT_API_KEY"
+    }
+  ],
+  "frIndexersOnly": true,
+  "preferredFrIndexers": [
+    "c411",
+    "ygg",
+    "yggtorrent",
+    "sharewood",
+    "darkiworld",
+    "torrent9",
+    "oxtorrent"
+  ],
+  "frTorznab": [
+    {
+      "id": "ygg",
+      "name": "YGG",
+      "base": "https://USER.usbx.me/jackett/api/v2.0/indexers/yggtorrent/results/torznab",
+      "apikey": "CHANGE_ME"
+    }
+  ],
+  "ftpHost": "joker.usbx.me",
+  "ftpPort": 21,
+  "ftpUser": "USER",
+  "ftpPass": "CHANGE_ME",
+  "ftpSecure": true,
+  "ftpWatchMovies": "/watch/transmission",
+  "ftpWatchTv": "/watch/qbittorrent",
+  "savePathMovies": "/home/USER/media/Movies",
+  "savePathTv": "/home/USER/media/TV Shows",
+  "neverDeleteMedia": true
+}
